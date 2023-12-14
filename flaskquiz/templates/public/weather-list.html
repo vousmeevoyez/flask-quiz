@@ -1,0 +1,29 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+    
+      <h1 class="display-3">Weather</h1>
+    
+      <p>Weather prediction for the next 3 day</p>
+    </div>
+</div><!-- /.jumbotron -->
+
+<div class="container">
+  <div class="row">
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
+    {% for weather in weathers %}
+        <li style="background-color: #fff; border: 1px solid #ddd; margin: 5px 0; padding: 10px; border-radius: 5px;">
+            <strong>Date:</strong> {{ moment(weather['dt']).format('dddd, MMMM Do YYYY, h:mm:ss a') }}<br>
+            <strong>Min Temperature:</strong> {{ weather['main']['temp_min']}} °C<br>
+            <strong>Max Temperature:</strong> {{ weather['main']['temp_max']}} °C
+        </li>
+        <!-- Add more entries as needed -->
+    {% endfor %}
+    </ul>
+  </div><!-- /.row -->
+</div>
+{% endblock %}
+

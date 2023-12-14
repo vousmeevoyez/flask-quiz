@@ -1,0 +1,25 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+    
+      <h1 class="display-3">Weather</h1>
+    
+      <p>Weather prediction for the next 3 day</p>
+
+      <form id="weatherForm" class="form form-register" method="POST" action="{{ url_for('public.weather') }}" role="form">
+             {{ weather_form.csrf_token }}
+              <div class="form-group">
+                  {{weather_form.city.label}}
+                  {{weather_form.city(placeholder="City name", class_="form-control")}}
+              </div>
+              <br>
+              <p><input class="btn btn-primary" type="submit" value="Search"></p>
+      </form>
+
+    </div>
+</div><!-- /.jumbotron -->
+{% endblock %}
+

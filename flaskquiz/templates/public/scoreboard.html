@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+    
+      <h1 class="display-3">Scoreboard</h1>
+    
+      <p>All users quiz score</p>
+    </div>
+</div><!-- /.jumbotron -->
+
+<div class="container">
+  <div class="row">
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
+    {% for user in users %}
+        <li style="background-color: #fff; border: 1px solid #ddd; margin: 5px 0; padding: 10px; border-radius: 5px;">
+            <strong>Name:</strong> {{ user.email }}<br>
+            <strong>Score:</strong> {{ user.score }}<br>
+        </li>
+        <!-- Add more entries as needed -->
+    {% endfor %}
+    </ul>
+  </div><!-- /.row -->
+</div>
+{% endblock %}
+

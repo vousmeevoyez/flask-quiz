@@ -1,0 +1,6 @@
+[run]
+source = flaskquiz
+omit = 
+    tests/*
+    autoapp.py
+

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+      <form id="quizForm" class="form form-register" method="POST" action="{{ url_for('quiz.quizzes') }}" role="form">
+             {{ form.csrf_token }}
+              <div class="form-group">
+                  {{ quiz['question']}}
+                  {{ form.answer }}
+              </div>
+              <br>
+              <p><input class="btn btn-primary" type="submit" value="Search"></p>
+      </form>
+    </div>
+{% endblock %}
+
